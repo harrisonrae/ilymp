@@ -17,7 +17,7 @@ images.forEach(image => {
         if (x + image.offsetWidth > window.innerWidth || x < 0) dx = -dx;
 
         // Bounce off the "walls" at the top and halfway down the screen
-        const maxY = window.innerHeight * 0.5; // Limit to top 50% of the screen
+        const maxY = window.innerHeight * 0.8; // Limit to top 50% of the screen
         if (y + image.offsetHeight > maxY || y < 0) dy = -dy;
 
         image.style.left = `${x}px`;
