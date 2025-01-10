@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+  
+    overflow: hidden; /* No scrollbars */
+
+    
+}
+/* Fullscreen background video */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Makes the video cover the screen */
+    z-index: -1; /* Places video behind everything */
+}
+
+
+/* Splash screen styles */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #000; /* Black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#enter-image {
+    width: 20%;
+    max-width: 600px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#enter-image:hover {
+    transform: scale(1.05);
+}
+
+#main-content {
+    display: none; /* Hidden by default, shown after splash screen */
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 20px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Only occupy the top half of the screen */
+    overflow: hidden;
+}
+
+/* See Works Button Styles */
+#see-works-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff6347; /* Tomato color */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1000; /* Ensures it stays above other content */
+}
+
+#see-works-button:hover {
+    background-color: #ff4500; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight pop-out effect */
+}
+
+#see-works-button:active {
+    background-color: #c0392b; /* Even darker shade on click */
+    transform: scale(0.95); /* Click-in effect */
+}
+
+
+.floating-image {
+    position: absolute;
+    height: 400px;
+    border-radius: 10px;
+    
+    object-fit: cover;
+    animation: float 20s infinite linear;
+}
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+#scrolling-text {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 1); 
+    color: #ff00b7; /* Text color */
+    font-size: 16px;
+    padding: 10px 0;
+    overflow: hidden; /* Hide text outside the container */
+    }
+
+#scrolling-text p {
+    display: inline-block;
+    white-space: nowrap; /* Prevent text wrapping */
+    padding-left: 100%; /* Start off-screen */
+    animation: scroll-text 20s linear infinite; /* Adjust duration for speed */
+}
+
+@keyframes scroll-text {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
